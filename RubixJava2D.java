@@ -53,9 +53,7 @@ private static boolean win=false;
     			int entryMoves = Integer.valueOf(entryA[2].substring(0,entryA[2].length()-1));
     			scoreboard.add(new ScoreEntry(entryName,entryTime,entryMoves));
     		}
-    		}catch(FileNotFoundException e){try{stream = new PrintStream("scoreboard.dat");}catch(Exception 
-
-ex){out.print(ex);}}
+    		}catch(FileNotFoundException e){try{stream = new PrintStream("scoreboard.dat");}catch(Exception ex){out.print(ex);}}
     	display = new RubixDisplay();
     	timer = new Timer(1000,timeAction);
     	restart();
