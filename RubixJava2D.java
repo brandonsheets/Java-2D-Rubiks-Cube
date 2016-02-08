@@ -123,50 +123,24 @@ ex){out.print(ex);}}
 	private void checkForWin()
 	{
 		//have it check each face to see if they're all correct and then display win window
-		if(f[0][0]==f[0][1]&&f[0][0]==f[0][2]&&f[0][0]==f[1][0]&&f[0][0]==f[1][1]&&f[0][0]==f[1][2]&&f[00][0]==f[2][0]
-
-&&f[0][0]==f[2][1]&&f[0][0]==f[2][2])
-			if(b[0][0]==b[0][1]&&b[0][0]==b[0][2]&&b[0][0]==b[1][0]&&b[0][0]==b[1][1]&&b[0][0]==b[1][2]
-
-&&b[00][0]==b[2][0]&&b[0][0]==b[2][1]&&b[0][0]==b[2][2])
-				if(u[0][0]==u[0][1]&&u[0][0]==u[0][2]&&u[0][0]==u[1][0]&&u[0][0]==u[1][1]&&u[0][0]
-
-==u[1][2]&&u[00][0]==u[2][0]&&u[0][0]==u[2][1]&&u[0][0]==u[2][2])
-					if(d[0][0]==d[0][1]&&d[0][0]==d[0][2]&&d[0][0]==d[1][0]&&d[0][0]==d[1]
-
-[1]&&d[0][0]==d[1][2]&&d[00][0]==d[2][0]&&d[0][0]==d[2][1]&&d[0][0]==d[2][2])
-						if(l[0][0]==l[0][1]&&l[0][0]==l[0][2]&&l[0][0]==l[1][0]&&l[0][0]==l
-
-[1][1]&&l[0][0]==l[1][2]&&l[00][0]==l[2][0]&&l[0][0]==l[2][1]&&l[0][0]==l[2][2])
-							if(r[0][0]==r[0][1]&&r[0][0]==r[0][2]&&r[0][0]==r[1]
-
-[0]&&r[0][0]==r[1][1]&&r[0][0]==r[1][2]&&r[00][0]==r[2][0]&&r[0][0]==r[2][1]&&r[0][0]==r[2][2])
+		if(f[0][0]==f[0][1]&&f[0][0]==f[0][2]&&f[0][0]==f[1][0]&&f[0][0]==f[1][1]&&f[0][0]==f[1][2]&&f[00][0]==f[2][0]&&f[0][0]==f[2][1]&&f[0][0]==f[2][2])
+			if(b[0][0]==b[0][1]&&b[0][0]==b[0][2]&&b[0][0]==b[1][0]&&b[0][0]==b[1][1]&&b[0][0]==b[1][2]&&b[00][0]==b[2][0]&&b[0][0]==b[2][1]&&b[0][0]==b[2][2])
+				if(u[0][0]==u[0][1]&&u[0][0]==u[0][2]&&u[0][0]==u[1][0]&&u[0][0]==u[1][1]&&u[0][0]==u[1][2]&&u[00][0]==u[2][0]&&u[0][0]==u[2][1]&&u[0][0]==u[2][2])
+					if(d[0][0]==d[0][1]&&d[0][0]==d[0][2]&&d[0][0]==d[1][0]&&d[0][0]==d[1][1]&&d[0][0]==d[1][2]&&d[00][0]==d[2][0]&&d[0][0]==d[2][1]&&d[0][0]==d[2][2])
+						if(l[0][0]==l[0][1]&&l[0][0]==l[0][2]&&l[0][0]==l[1][0]&&l[0][0]==l[1][1]&&l[0][0]==l[1][2]&&l[00][0]==l[2][0]&&l[0][0]==l[2][1]&&l[0][0]==l[2][2])
+							if(r[0][0]==r[0][1]&&r[0][0]==r[0][2]&&r[0][0]==r[1][0]&&r[0][0]==r[1][1]&&r[0][0]==r[1][2]&&r[00][0]==r[2][0]&&r[0][0]==r[2][1]&&r[0][0]==r[2][2])
 							{
-								Object[] options = {"New 
-
-Game","Exit"};timer.stop();
-								Integer result = 
-
-JOptionPane.showOptionDialog(null,"Congratulations!!"+
+								Object[] options = {"New Game","Exit"};timer.stop();
+								Integer result = JOptionPane.showOptionDialog(null,"Congratulations!!"+
 												
 
-								   "\nYou solved it in:
-
-\n"+clock.substring(0,2)+" min and "+
-												
-
+								   "\nYou solved it in:\n"+clock.substring(0,2)+" min and "+
 								   clock.substring(3)+"sec\n"+
-												
-
-								   "With "+moveCounter+" 
-
-moves.","YOU WIN",JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[0]);
+								   "With "+moveCounter+" moves.","YOU WIN",JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[0]);
 								if(result==JOptionPane.YES_OPTION)
 								{saveResults();restart();timer.start();}
 								else
-								{saveResults();restart();display.menu
-
-();}
+								{saveResults();restart();display.menu();}
 							}
 	}
 
@@ -366,9 +340,7 @@ moves.","YOU WIN",JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,o
     	{
     		for(int data:row)
     		{
-    			out.print( data==REDC?"R": (data==ORANGEC?"O": (data==BLUEC?"B": 
-
-(data==GREENC?"G": (data==YELLOWC?"Y": (data==WHITEC?"W": "-"))))));
+    			out.print( data==REDC?"R": (data==ORANGEC?"O": (data==BLUEC?"B": (data==GREENC?"G": (data==YELLOWC?"Y": (data==WHITEC?"W": "-"))))));
     		}
     		out.println();
     	}
@@ -377,16 +349,10 @@ moves.","YOU WIN",JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,o
 
     private void userTurn()
     {
-    	ArrayList<String> possibleChoices = new ArrayList<String>(Arrays.asList
-
-("F","F'","B","B'","L","L'","R","R'","U","U'","D","D'","moves","undo","random moves","randomize","rotate right","rotate 
-
-left"));
+    	ArrayList<String> possibleChoices = new ArrayList<String>(Arrays.asList("F","F'","B","B'","L","L'","R","R'","U","U'","D","D'","moves","undo","random moves","randomize","rotate right","rotate left"));
     	boolean moveValid = false;
     	Scanner moveScan = new Scanner(in);
-    	out.println("Enter the move in the form of:\nU, D, L, R, F, or B for CW turns and\nU', D', L', R', F', or B' for CCW 
-
-turns.\n You can display your moves with \"moves\" and \n undo with the \"undo\"");
+    	out.println("Enter the move in the form of:\nU, D, L, R, F, or B for CW turns and\nU', D', L', R', F', or B' for CCW turns.\n You can display your moves with \"moves\" and \n undo with the \"undo\"");
     	String move="";
     	while(!moveValid&&!win)
     	{
@@ -457,19 +423,13 @@ turns.\n You can display your moves with \"moves\" and \n undo with the \"undo\"
     			if((move1.equals("R")&&move2.equals("R'"))||(move1.equals("R'")&&move2.equals("R")))
     				return true;
     			else
-    				if((move1.equals("U")&&move2.equals("U'"))||(move1.equals("U'")
-
-&&move2.equals("U")))
+    				if((move1.equals("U")&&move2.equals("U'"))||(move1.equals("U'")&&move2.equals("U")))
     					return true;
     				else
-    					if((move1.equals("D")&&move2.equals("D'"))||(move1.equals("D'")
-
-&&move2.equals("D")))
+    					if((move1.equals("D")&&move2.equals("D'"))||(move1.equals("D'")&&move2.equals("D")))
     						return true;
     					else
-    						if((move1.equals("F")&&move2.equals("F'"))||
-
-(move1.equals("F'")&&move2.equals("F")))
+    						if((move1.equals("F")&&move2.equals("F'"))||(move1.equals("F'")&&move2.equals("F")))
     							return true;
     						else
     							return false;
@@ -1149,9 +1109,7 @@ turns.\n You can display your moves with \"moves\" and \n undo with the \"undo\"
 			Font forte = new Font("Forte",1,48);
 			g.drawRect(89,127,301,226);
 			g.setFont(forte);
-			g.drawString("Java Rubik's",(int)((480-g.getFontMetrics().stringWidth("Java 
-
-Rubik's"))/2),80);
+			g.drawString("Java Rubik's",(int)((480-g.getFontMetrics().stringWidth("Java Rubik's"))/2),80);
 			g.drawString("Cube",(int)((480-g.getFontMetrics().stringWidth("Cube"))/2),120);
 			g.drawRect(0,0,479,479);
 			g.setFont(new Font("Times New Roman",1,15));
@@ -1766,9 +1724,7 @@ Rubik's"))/2),80);
 	class ScoreAction implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			String data = "";
-			for(int x=0;x<10;x++) data+=(((x+1)<10?" "+(x+1):x+1)+")   "+(x<scoreboard.size()?
-
-scoreboard.get(x):"")+"\n");
+			for(int x=0;x<10;x++) data+=(((x+1)<10?" "+(x+1):x+1)+")   "+(x<scoreboard.size()?scoreboard.get(x):"")+"\n");
 			JOptionPane.showMessageDialog(null,data,"Scoreboard",3);
 			repaint();
 	}
@@ -1778,9 +1734,7 @@ scoreboard.get(x):"")+"\n");
 	{
 		public void actionPerformed(ActionEvent event)
 		{
-			JOptionPane.showMessageDialog(display,"Java Rubik's Cube\nVersion: 0.3.3\nMade by: 
-
-Brandon Sheets © 2016","About",JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(display,"Java Rubik's Cube\nVersion: 0.3.3\nMade by: Brandon Sheets © 2016","About",JOptionPane.INFORMATION_MESSAGE);
 		}
 	}
 
@@ -1788,9 +1742,7 @@ Brandon Sheets © 2016","About",JOptionPane.INFORMATION_MESSAGE);
 	{
 		public void actionPerformed(ActionEvent event)
 		{
-			if(JOptionPane.showConfirmDialog(null,"Are you sure you want to quit?","Confirm 
-
-Action",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE)==0)
+			if(JOptionPane.showConfirmDialog(null,"Are you sure you want to quit?","Confirm Action",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE)==0)
 			{
 				System.exit(0);
 			}
@@ -1837,9 +1789,7 @@ Action",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE)==0)
 		public void actionPerformed(ActionEvent event)
 		{
 			timer.stop();
-			int result = JOptionPane.showConfirmDialog(null,"Are you sure you want to quit to the 
-
-Main Menu?","Confirm Action",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+			int result = JOptionPane.showConfirmDialog(null,"Are you sure you want to quit to the Main Menu?","Confirm Action",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
 			if(result==0)
 			{
 				time=0;
@@ -1872,12 +1822,8 @@ private int entryMoves=0;
 
 	public int compareTo(Object entry)
 	{
-		int min=Integer.valueOf(this.entryTime.substring(0,2));int eMin=Integer.valueOf(((ScoreEntry)
-
-entry).entryTime.substring(0,2));
-		int sec=Integer.valueOf(this.entryTime.substring(3,5));int eSec=Integer.valueOf(((ScoreEntry)
-
-entry).entryTime.substring(3,5));
+		int min=Integer.valueOf(this.entryTime.substring(0,2));int eMin=Integer.valueOf(((ScoreEntry)entry).entryTime.substring(0,2));
+		int sec=Integer.valueOf(this.entryTime.substring(3,5));int eSec=Integer.valueOf(((ScoreEntry)entry).entryTime.substring(3,5));
 		if(min<eMin)
 			return -1;
 		else if(min==eMin)
